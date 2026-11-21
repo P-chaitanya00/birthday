@@ -4125,3 +4125,25 @@ html, body {
     font-size: 1.25rem;
   }
 }
+
+/* ===================================================
+   REMOVE NETLIFY INJECTED BADGE & DRAWER
+   =================================================== */
+#netlify-drawer,
+[data-netlify-drawer],
+[data-netlify-badge],
+.netlify-badge,
+iframe[title*="Netlify" i],
+iframe[src*="netlify" i],
+div[class*="netlify" i],
+div[id*="netlify" i],
+div:has(> a[href*="netlify.com" i]),
+a[href*="netlify.com" i] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  clip-path: inset(100%) !important;
+}

@@ -1410,3 +1410,34 @@ document.addEventListener("DOMContentLoaded", () => {
   initCalendarTimeline();
   initSparkleCursor();
 });
+
+// Remove any injected Netlify Badge / Drawer automatically
+(function removeNetlifyBadge() {
+  function cleanup() {
+    const selectors = [
+      '#netlify-drawer',
+      '[data-netlify-drawer]',
+      '[data-netlify-badge]',
+      '.netlify-badge',
+      'iframe[src*="netlify" i]',
+      'iframe[title*="Netlify" i]',
+      'div[class*="netlify" i]',
+      'div[id*="netlify" i]'
+    ];
+    selectors.forEach(sel => {
+      document.querySelectorAll(sel).forEach(el => el.remove());
+    });
+    document.querySelectorAll('*').forEach(el => {
+      if (el.children.length === 0 && el.textContent && el.textContent.includes('Powered by Netlify')) {
+        let parent = el.closest('div, a, button') || el;
+        parent.remove();
+      }
+    });
+  }
+  cleanup();
+  if (document.readyState !== 'loading') cleanup();
+  document.addEventListener('DOMContentLoaded', cleanup);
+  window.addEventListener('load', cleanup);
+  const observer = new MutationObserver(cleanup);
+  observer.observe(document.documentElement, { childList: true, subtree: true });
+})();

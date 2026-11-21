@@ -3692,115 +3692,454 @@ body.letter-modal-open {
   margin-top: 24px;
 }
 
-/* RESPONSIVE DESIGN */
-@media (max-width: 600px) {
-  .countdown-grid {
-    gap: 6px;
+/* ===================================================
+   ULTRA-PREMIUM MOBILE & TABLET RESPONSIVE SYSTEM
+   =================================================== */
+html, body {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+@media (max-width: 768px) {
+  .section-container {
+    padding: 0 16px;
+    margin: 32px auto;
   }
-  .time-block {
-    min-width: 60px;
-    padding: 10px 8px;
+  .section-title {
+    font-size: 2.1rem;
   }
-  .time-num {
-    font-size: 1.6rem;
+  .hero-section {
+    padding: 24px 14px 18px;
   }
-  .parchment {
-    padding: 30px 18px;
-    border-radius: 18px;
+  .hero-title {
+    font-size: 2.6rem;
   }
-  .letter-stamp {
-    font-size: 1.8rem;
-  }
-  .letter-body {
-    font-size: 1.05rem;
-    line-height: 1.75;
-  }
-  .letter-poetry-box {
-    padding: 18px 14px;
-  }
-  .poetry-lines p {
+  .hero-subtitle {
     font-size: 1.15rem;
   }
-  .bangaru-earth-pill {
-    font-size: 1.05rem;
-    padding: 8px 18px;
+  .hero-name {
+    font-size: 3rem;
   }
-  .crispy-title {
-    font-size: 1.35rem;
-  }
-  .gift-progress-tracker {
-    padding: 8px 12px;
-    margin-bottom: 24px;
-  }
-  .step-label {
-    font-size: 0.78rem;
-  }
-  .step-circle {
-    width: 28px;
-    height: 28px;
-    font-size: 0.8rem;
-  }
-  .tracker-line {
-    margin: 0 6px;
-  }
-  .luxury-bouquet-showcase {
-    min-height: 240px;
-  }
-  .luxury-bouquet-img-3d {
-    width: 175px;
-    max-height: 235px;
-  }
-  .teddy-animation-stage {
-    height: 180px;
-  }
-  .teddy-svg {
-    width: 140px;
-    height: 160px;
-  }
-  .soulmate-certificate-box {
-    padding: 16px 12px;
-  }
-  .triad-row {
-    font-size: 0.82rem;
-  }
-  .deluxe-cake.realistic-bakery-cake {
-    transform: scale(0.86);
-    transform-origin: top center;
-    margin-bottom: -15px;
+  .envelope-cover-wrapper {
+    padding: 0 10px;
   }
   .letter-envelope-cover {
-    padding: 32px 20px 28px;
+    max-width: 520px;
+  }
+}
+
+@media (max-width: 540px) {
+  /* Prevent any side bounce on small screens */
+  .main-container {
+    padding: 0 8px;
+    overflow-x: hidden;
+  }
+
+  .section-container {
+    padding: 0 12px;
+    margin: 24px auto;
+  }
+
+  .section-header {
+    margin-bottom: 18px;
+  }
+
+  .section-title {
+    font-size: 1.85rem;
+    line-height: 1.3;
+  }
+
+  /* Intro Calendar Screen */
+  .calendar-scene {
+    padding: 16px 12px;
+  }
+  .calendar-card {
+    width: 250px;
+    height: 290px;
+  }
+  .cal-date-number {
+    font-size: 5rem;
+  }
+  .calendar-intro-title {
+    font-size: 1.5rem;
+    margin-bottom: 18px;
+  }
+  .calendar-status-box {
+    padding: 10px 14px;
+    font-size: 0.88rem;
+  }
+  .cal-controls {
+    flex-direction: column;
+    width: 100%;
+    max-width: 260px;
+    gap: 8px;
+  }
+  .cal-enter-btn, .cal-skip-btn {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    padding: 12px 20px;
+    font-size: 0.95rem;
+  }
+
+  /* Hero & Countdown */
+  .hero-title {
+    font-size: 2.1rem;
+    line-height: 1.22;
+  }
+  .hero-name {
+    font-size: 2.5rem;
+    display: block;
+    margin-top: 4px;
+  }
+  .hero-subtitle {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    padding: 0 4px;
+  }
+
+  .countdown-grid {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    width: 100%;
+    max-width: 360px;
+    margin: 18px auto 0;
+  }
+  .time-block {
+    flex: 1 1 0;
+    min-width: 0;
+    padding: 10px 4px;
+    border-radius: 12px;
+  }
+  .time-num {
+    font-size: 1.55rem;
+  }
+  .time-label {
+    font-size: 0.68rem;
+    letter-spacing: 0.04em;
+  }
+
+  /* Interactive Cake */
+  .deluxe-cake.realistic-bakery-cake {
+    transform: scale(0.82);
+    transform-origin: top center;
+    margin-bottom: -18px;
+  }
+  .cake-action-btns {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    max-width: 280px;
+    margin: 12px auto 0;
+  }
+  .cake-action-btns .primary-btn {
+    width: 100%;
+    padding: 13px 22px;
+    font-size: 0.98rem;
+  }
+  .cake-surprise-card {
+    max-width: 95vw;
+    padding: 20px 16px;
+    border-radius: 18px;
+  }
+  .surprise-polaroid-frame {
+    width: 180px;
+    padding: 10px 10px 16px;
+  }
+  .surprise-title {
+    font-size: 1.5rem;
+  }
+
+  /* Love Letter Envelope Cover */
+  .letter-envelope-cover {
+    width: 96%;
+    max-width: 420px;
+    padding: 26px 16px 22px;
     border-radius: 18px;
   }
   .envelope-stamp-wrap {
-    top: 14px;
-    right: 14px;
-    gap: 8px;
+    top: 12px;
+    right: 12px;
+    gap: 6px;
   }
   .vintage-stamp {
-    width: 42px;
-    height: 52px;
+    width: 38px;
+    height: 48px;
   }
   .postmark-circle {
-    width: 42px;
-    height: 42px;
-    font-size: 0.38rem;
+    width: 38px;
+    height: 38px;
+    font-size: 0.35rem;
+  }
+  .envelope-title {
+    font-size: 0.9rem;
   }
   .envelope-recipient-name {
     font-size: 1.85rem;
+    margin: 12px 0 16px;
   }
   .envelope-open-prompt {
-    font-size: 0.9rem;
-    padding: 11px 22px;
+    font-size: 0.95rem;
+    padding: 12px 22px;
+    width: 92%;
+    justify-content: center;
   }
+
+  /* Full Parchment Letter Modal */
   .letter-modal-overlay {
-    padding: 24px 12px;
+    padding: 20px 10px;
+  }
+  .letter-modal-dialog {
+    max-width: 100%;
   }
   .letter-modal-close-btn {
     top: -12px;
-    right: -10px;
+    right: -6px;
     width: 40px;
     height: 40px;
-    font-size: 1.4rem;
+    font-size: 1.35rem;
+  }
+  .parchment.letter-modal-parchment {
+    padding: 24px 14px 20px;
+    border-radius: 18px;
+  }
+  .letter-stamp {
+    font-size: 1.6rem;
+  }
+  .letter-date {
+    font-size: 0.82rem;
+  }
+  .letter-hi {
+    font-size: 1.8rem;
+  }
+  .letter-lead {
+    font-size: 1.05rem;
+    line-height: 1.6;
+  }
+  .letter-para {
+    font-size: 0.98rem;
+    line-height: 1.7;
+    text-align: left;
+  }
+  .letter-special-memory-box {
+    padding: 16px 12px;
+    border-radius: 14px;
+  }
+  .crispy-title {
+    font-size: 1.3rem;
+  }
+  .letter-perfume-card {
+    padding: 14px 12px;
+  }
+  .perfume-text {
+    font-size: 0.95rem;
+  }
+  .letter-poetry-box {
+    padding: 16px 12px;
+    border-radius: 14px;
+  }
+  .poetry-lines p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+  .letter-promises-wrapper {
+    padding: 16px 10px;
+    border-radius: 14px;
+  }
+  .promise-item {
+    font-size: 0.92rem;
+    gap: 10px;
+    line-height: 1.5;
+  }
+  .promise-emoji {
+    font-size: 1.25rem;
+  }
+  .bangaru-earth-pill {
+    font-size: 1rem;
+    padding: 8px 16px;
+  }
+  .fold-letter-btn {
+    width: 100%;
+    padding: 12px 18px;
+    font-size: 0.92rem;
+  }
+
+  /* 10 Reasons Deck */
+  .reasons-deck-container {
+    width: 95%;
+    max-width: 360px;
+    min-height: 230px;
+  }
+  .reason-card {
+    padding: 26px 18px 20px;
+    min-height: 210px;
+    border-radius: 18px;
+  }
+  .reason-text {
+    font-size: 1.15rem;
+    line-height: 1.6;
+  }
+  .next-reason-btn {
+    padding: 11px 22px;
+    font-size: 0.92rem;
+  }
+
+  /* Filmstrip Polaroid Gallery */
+  .gallery-viewport.reel-mode .polaroid-card {
+    flex: 0 0 215px;
+    width: 215px;
+    padding: 10px 10px 14px;
+  }
+  .gallery-viewport.reel-mode .polaroid-img-wrap {
+    height: 215px;
+  }
+  .memory-active-caption {
+    font-size: 1.2rem;
+    padding: 0 8px;
+  }
+  .screen-gallery-arrow {
+    width: 38px;
+    height: 38px;
+    font-size: 1.5rem;
+  }
+  .screen-gallery-arrow.screen-arrow-left {
+    left: 2px;
+  }
+  .screen-gallery-arrow.screen-arrow-right {
+    right: 2px;
+  }
+  .gallery-controls-bar {
+    gap: 8px;
+  }
+
+  /* 3D Realistic Gift Box */
+  .realistic-gift-box-container {
+    width: 250px;
+    height: 270px;
+  }
+  .realistic-gift-box {
+    width: 195px;
+    height: 195px;
+  }
+  .box-lid {
+    width: 212px;
+    height: 48px;
+  }
+  .lid-top {
+    height: 38px;
+  }
+  .box-body {
+    width: 195px;
+    height: 142px;
+  }
+  .silk-bow {
+    top: -28px;
+    width: 90px;
+    height: 42px;
+  }
+  .bow-loop {
+    width: 42px;
+    height: 32px;
+  }
+  .bow-center-knot {
+    width: 22px;
+    height: 20px;
+  }
+  .bow-tail {
+    width: 16px;
+    height: 38px;
+  }
+  .gift-tap-hint {
+    margin-top: 26px;
+    padding: 8px 18px;
+  }
+  .hint-text {
+    font-size: 0.84rem;
+  }
+
+  /* Revealed Secret Note Modal */
+  .revealed-note-modal {
+    padding: 12px;
+  }
+  .revealed-note-card {
+    width: 95%;
+    max-width: 350px;
+    padding: 22px 16px 18px;
+    border-radius: 20px;
+  }
+  .note-header-badge {
+    font-size: 0.76rem;
+    padding: 4px 12px;
+  }
+  .note-main-message {
+    font-size: 1.35rem;
+    line-height: 1.45;
+  }
+  .tight-hug-action-btn {
+    width: 100%;
+    padding: 13px 18px;
+    font-size: 0.95rem;
+  }
+
+  /* Wish Board & Sticky Notes */
+  .wish-board-input-wrap {
+    flex-direction: column;
+    width: 100%;
+    max-width: 340px;
+    gap: 10px;
+  }
+  .wish-board-input-wrap input {
+    width: 100%;
+    font-size: 0.95rem;
+    padding: 12px 16px;
+  }
+  .wish-board-input-wrap button {
+    width: 100%;
+    padding: 12px 18px;
+  }
+  .sticky-notes-board {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+  .sticky-note {
+    font-size: 1.1rem;
+    min-height: 120px;
+    padding: 22px 16px 16px;
+  }
+
+  /* Floating Personalize Button */
+  .settings-floating-btn {
+    bottom: 14px;
+    right: 14px;
+    padding: 9px 14px;
+    font-size: 0.82rem;
+  }
+}
+
+@media (max-width: 380px) {
+  /* Extra compact for narrow phones like iPhone SE / Galaxy A */
+  .hero-title {
+    font-size: 1.85rem;
+  }
+  .hero-name {
+    font-size: 2.2rem;
+  }
+  .time-block {
+    padding: 8px 2px;
+  }
+  .time-num {
+    font-size: 1.35rem;
+  }
+  .time-label {
+    font-size: 0.62rem;
+  }
+  .envelope-recipient-name {
+    font-size: 1.65rem;
+  }
+  .note-main-message {
+    font-size: 1.25rem;
   }
 }

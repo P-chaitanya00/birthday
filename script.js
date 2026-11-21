@@ -607,6 +607,8 @@ function initGifts() {
   const giftBoxContainer = document.getElementById("giftBoxContainer");
   const giftBox = document.getElementById("realisticGiftBox");
   const giftTapHint = document.getElementById("giftTapHint");
+  const boxLid = document.getElementById("boxLid");
+  const boxBody = document.getElementById("boxBody");
   const noteModal = document.getElementById("revealedNoteModal");
   const closeNoteBtn = document.getElementById("closeNoteBtn");
   const noteBackdrop = document.getElementById("noteBackdrop");
@@ -614,8 +616,15 @@ function initGifts() {
 
   if (!giftBoxContainer || !noteModal) return;
 
+  let isOpening = false;
+
   function openGiftBox(e) {
-    if (e && e.stopPropagation) e.stopPropagation();
+    if (e) {
+      if (e.stopPropagation) e.stopPropagation();
+    }
+    if (isOpening) return;
+    isOpening = true;
+
     if (giftBox) giftBox.classList.add("opened");
 
     // Confetti celebration
@@ -632,6 +641,7 @@ function initGifts() {
     setTimeout(() => {
       noteModal.classList.add("active");
       noteModal.setAttribute("aria-hidden", "false");
+      isOpening = false;
     }, 120);
   }
 
@@ -640,11 +650,19 @@ function initGifts() {
     noteModal.classList.remove("active");
     noteModal.setAttribute("aria-hidden", "true");
     if (giftBox) giftBox.classList.remove("opened");
+    isOpening = false;
   }
 
-  giftBoxContainer.addEventListener("click", openGiftBox);
-  if (giftBox) giftBox.addEventListener("click", openGiftBox);
-  if (giftTapHint) giftTapHint.addEventListener("click", openGiftBox);
+  // Bind click & pointer handlers across all parts of the gift box
+  const interactiveTargets = [giftBoxContainer, giftBox, boxLid, boxBody, giftTapHint].filter(Boolean);
+  interactiveTargets.forEach(target => {
+    target.addEventListener("click", openGiftBox);
+    target.addEventListener("pointerup", (e) => {
+      if (e.pointerType === "touch") {
+        openGiftBox(e);
+      }
+    });
+  });
 
   giftBoxContainer.addEventListener("keydown", (e) => {
     if (e.key === "Enter" || e.key === " ") {

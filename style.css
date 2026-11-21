@@ -64,25 +64,10 @@ body {
 
 /* Floating Settings Button */
 .settings-floating-btn {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  z-index: 95;
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(10px);
-  border: 1px solid var(--blush-accent);
-  padding: 8px 16px;
-  border-radius: 30px;
-  font-family: var(--font-sans);
-  font-weight: 600;
-  font-size: 0.85rem;
-  color: var(--deep-velvet);
-  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  transition: all 0.3s ease;
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
 }
 
 .settings-floating-btn:hover {
@@ -4112,10 +4097,7 @@ html, body {
 
   /* Floating Personalize Button */
   .settings-floating-btn {
-    bottom: 14px;
-    right: 14px;
-    padding: 9px 14px;
-    font-size: 0.82rem;
+    display: none !important;
   }
 }
 

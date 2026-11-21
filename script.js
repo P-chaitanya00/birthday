@@ -1040,10 +1040,12 @@ function initSettingsModal() {
     });
   }
 
-  openBtn.addEventListener("click", () => {
-    populateModal();
-    modal.classList.add("open");
-  });
+  if (openBtn) {
+    openBtn.addEventListener("click", () => {
+      populateModal();
+      modal.classList.add("open");
+    });
+  }
 
   closeBtn.addEventListener("click", () => {
     modal.classList.remove("open");

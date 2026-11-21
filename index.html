@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday, My Sweetheart ❤️</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Dancing+Script:wght@600;700&family=Great+Vibes&family=Playfair+Display:ital,wght@0,600;0,700;0,800;0,900;1,600;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Prata&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=32" />
+  <!-- Canvas Confetti CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+  <!-- Floating Hearts Background Canvas -->
+  <canvas id="bg-canvas"></canvas>
+
+
+
+  <!-- Quick Personalization Trigger Button -->
+  <button class="settings-floating-btn" id="openSettingsBtn" title="Personalize Name, Photos & Messages">
+    <span class="gear-icon">✨</span> Personalize
+  </button>
+
+  <!-- PAGE 1: CALENDAR INTRO SCREEN -->
+  <div class="calendar-page-overlay" id="calendarPage">
+    <div class="calendar-scene">
+
+      <!-- Luxury 3D Calendar Card -->
+      <div class="calendar-3d-wrapper">
+        <div class="calendar-card" id="calendarCard">
+          <div class="calendar-binder-rings">
+            <span class="binder-ring"></span>
+            <span class="binder-ring"></span>
+            <span class="binder-ring"></span>
+            <span class="binder-ring"></span>
+          </div>
+          <div class="calendar-header">
+            <span class="cal-year">2026</span>
+            <span class="cal-month" id="calMonth">JANUARY</span>
+          </div>
+          <div class="calendar-body">
+            <div class="cal-day-name" id="calDayName">THURSDAY</div>
+            <div class="cal-date-number" id="calDateNum">1</div>
+            <div class="cal-status-tag" id="calStatusTag">Just an ordinary day...</div>
+          </div>
+          <div class="calendar-footer-tear"></div>
+        </div>
+      </div>
+
+      <!-- Action Area (Appears on Nov 22) -->
+      <div class="calendar-action-box" id="calendarActionBox">
+        <div class="arrival-banner">
+          <span class="star-burst">🎉</span>
+          <div class="arrival-text">
+            <h3>November 22, 2026</h3>
+            <p>The day the most beautiful girl in the universe was born ❤️</p>
+          </div>
+        </div>
+        <button class="see-more-btn glow-btn" id="seeMoreBtn">
+          <span>See More ✨</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Small Skip Option -->
+      <div class="calendar-skip-wrap">
+        <span class="skip-link" id="skipToPage2" title="Skip directly to the celebration">
+          Skip
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAGE 2: MAIN BIRTHDAY WONDERLAND (Hidden until 'See More' is clicked) -->
+  <div class="main-wrapper" id="mainSite">
+    
+    <!-- Top Navigation Bar -->
+    <div class="top-nav-bar">
+      <button class="back-to-cal-btn" id="backToCalBtn">
+        ← Back to Calendar
+      </button>
+      <div class="nav-bday-tag">Nov 22, 2026 ✨</div>
+    </div>
+    
+    <!-- Hero Section -->
+    <header class="hero-section">
+      <h1 class="hero-title">
+        Happy Birthday, <span class="gradient-name" id="heroName">My Bangaru</span>! <span class="pulse-heart">❤️</span>
+      </h1>
+
+      <!-- Side-by-Side Couple Memories Showcase -->
+      <div class="hero-memories-showcase">
+        <!-- Photo 1 -->
+        <div class="memory-frame-card frame-tilt-left">
+          <div class="frame-washi-tape"></div>
+          <div class="frame-inner-mat">
+            <img src="photo1.jpg" alt="Our sweet moment" class="memory-img" />
+          </div>
+          <div class="frame-caption">Every surprise with you ✨</div>
+        </div>
+
+        <!-- Photo 2 (Centerpiece) -->
+        <div class="memory-frame-card frame-center-featured">
+          <div class="frame-washi-tape tape-gold"></div>
+          <div class="frame-inner-mat">
+            <img src="photo2.jpg" alt="My favorite person" class="memory-img" />
+          </div>
+          <div class="frame-caption">My whole world ❤️</div>
+        </div>
+
+        <!-- Photo 3 -->
+        <div class="memory-frame-card frame-tilt-right">
+          <div class="frame-washi-tape"></div>
+          <div class="frame-inner-mat">
+            <img src="photo3.jpg" alt="Forever together" class="memory-img" />
+          </div>
+          <div class="frame-caption">Always hand in hand 🌸</div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Interactive Virtual Cake Section -->
+    <section class="section-container cake-section">
+      <div class="section-header">
+        <h2 class="section-title">Blow Out the Birthday Candles 🎂</h2>
+      </div>
+
+      <div class="deluxe-cake-stage">
+        <!-- Glowing Warm Spotlight behind cake -->
+        <div class="cake-ambient-glow"></div>
+
+        <!-- Orbiting celebration sparkles -->
+        <div class="cake-sparkles-orbit">
+          <span class="orbit-sparkle s1">✨</span>
+          <span class="orbit-sparkle s2">💖</span>
+          <span class="orbit-sparkle s3">✨</span>
+          <span class="orbit-sparkle s4">🌸</span>
+        </div>
+
+        <!-- The Ultra-Realistic 3D Patisserie Cake -->
+        <div class="deluxe-cake realistic-bakery-cake" id="cakeElement">
+          
+          <!-- Ornate Polished Gold Calligraphy Cake Topper -->
+          <div class="cake-gold-topper">
+            <div class="topper-crown">👑</div>
+            <div class="topper-text">Happy Birthday Bangaru</div>
+            <div class="topper-stem"></div>
+          </div>
+
+          <!-- 5 Ultra-Realistic Taper Candles -->
+          <div class="candles-row" id="candlesRow">
+            <!-- Candle 1 -->
+            <div class="candle c1" data-lit="true" title="Tap to blow out!">
+              <div class="flame-halo"></div>
+              <div class="flame">
+                <span class="flame-core"></span>
+              </div>
+              <div class="smoke-wisp"></div>
+              <div class="wick"></div>
+              <div class="candle-wax candle-rose-gold"></div>
+              <div class="candle-rosette"></div>
+            </div>
+
+            <!-- Candle 2 -->
+            <div class="candle c2" data-lit="true" title="Tap to blow out!">
+              <div class="flame-halo"></div>
+              <div class="flame">
+                <span class="flame-core"></span>
+              </div>
+              <div class="smoke-wisp"></div>
+              <div class="wick"></div>
+              <div class="candle-wax candle-champagne"></div>
+              <div class="candle-rosette"></div>
+            </div>
+
+            <!-- Candle 3 (Centerpiece Royal Candle) -->
+            <div class="candle c3 center-candle" data-lit="true" title="Tap to blow out!">
+              <div class="flame-halo center-halo"></div>
+              <div class="flame center-flame">
+                <span class="flame-core"></span>
+              </div>
+              <div class="smoke-wisp"></div>
+              <div class="wick"></div>
+              <div class="candle-wax candle-royal-gold"></div>
+              <div class="candle-rosette"></div>
+            </div>
+
+            <!-- Candle 4 -->
+            <div class="candle c4" data-lit="true" title="Tap to blow out!">
+              <div class="flame-halo"></div>
+              <div class="flame">
+                <span class="flame-core"></span>
+              </div>
+              <div class="smoke-wisp"></div>
+              <div class="wick"></div>
+              <div class="candle-wax candle-champagne"></div>
+              <div class="candle-rosette"></div>
+            </div>
+
+            <!-- Candle 5 -->
+            <div class="candle c5" data-lit="true" title="Tap to blow out!">
+              <div class="flame-halo"></div>
+              <div class="flame">
+                <span class="flame-core"></span>
+              </div>
+              <div class="smoke-wisp"></div>
+              <div class="wick"></div>
+              <div class="candle-wax candle-rose-gold"></div>
+              <div class="candle-rosette"></div>
+            </div>
+          </div>
+
+          <!-- 3D Realistic Tier 1: Vanilla Chantilly & Glazed Berries -->
+          <div class="real-cake-tier tier-1-top">
+            <!-- 3D Elliptical Top Surface with Berries & Cream -->
+            <div class="tier-ellipse-top top-ellipse">
+              <div class="candlelight-surface-glow" id="cakeSurfaceGlow"></div>
+              <div class="berries-arrangement">
+                <span class="real-berry b1" title="Fresh Strawberry">🍓</span>
+                <span class="real-cherry c1" title="Glazed Cherry">🍒</span>
+                <span class="real-berry b2" title="Fresh Strawberry">🍓</span>
+                <span class="real-blueberry bb1" title="Wild Blueberry">🫐</span>
+                <span class="real-berry b3" title="Fresh Strawberry">🍓</span>
+              </div>
+              <div class="gold-flakes-layer">
+                <span class="flake f1">✦</span>
+                <span class="flake f2">✦</span>
+                <span class="flake f3">✦</span>
+              </div>
+            </div>
+
+            <!-- Tier 1 Cylinder Body with Realistic Cascading Drips -->
+            <div class="tier-cylinder-body top-cylinder">
+              <div class="luxury-drips top-tier-drips">
+                <span class="drip-drop dp1"></span>
+                <span class="drip-drop dp2"></span>
+                <span class="drip-drop dp3"></span>
+                <span class="drip-drop dp4"></span>
+                <span class="drip-drop dp5"></span>
+                <span class="drip-drop dp6"></span>
+                <span class="drip-drop dp7"></span>
+              </div>
+              <div class="tier-surface-highlight"></div>
+            </div>
+
+            <!-- Piped Cream Shell Border along bottom of Tier 1 -->
+            <div class="piped-shell-border tier-1-border">
+              <span class="shell-pip"></span><span class="shell-pip"></span><span class="shell-pip"></span>
+              <span class="shell-pip"></span><span class="shell-pip"></span><span class="shell-pip"></span>
+              <span class="shell-pip"></span><span class="shell-pip"></span><span class="shell-pip"></span>
+            </div>
+          </div>
+
+          <!-- 3D Realistic Tier 2: Quilted Rose Silk & Gold Pearls -->
+          <div class="real-cake-tier tier-2-mid">
+            <!-- 3D Elliptical Top Surface of Tier 2 -->
+            <div class="tier-ellipse-top mid-ellipse">
+              <div class="piped-edge-pearls">
+                <span class="pearl-bead"></span><span class="pearl-bead"></span><span class="pearl-bead"></span>
+                <span class="pearl-bead"></span><span class="pearl-bead"></span><span class="pearl-bead"></span>
+                <span class="pearl-bead"></span><span class="pearl-bead"></span><span class="pearl-bead"></span>
+                <span class="pearl-bead"></span><span class="pearl-bead"></span>
+              </div>
+            </div>
+
+            <!-- Quilted Diamond Embossed Cylinder Body -->
+            <div class="tier-cylinder-body mid-cylinder">
+              <div class="quilted-pattern-overlay"></div>
+              <div class="quilted-pearls-grid">
+                <span class="q-pearl q1"></span><span class="q-pearl q2"></span><span class="q-pearl q3"></span>
+                <span class="q-pearl q4"></span><span class="q-pearl q5"></span><span class="q-pearl q6"></span>
+                <span class="q-pearl q7"></span><span class="q-pearl q8"></span>
+              </div>
+
+              <!-- Embossed Golden Ribbon Plaque for Bangaru -->
+              <div class="luxury-ribbon-plaque">
+                <div class="plaque-sparkle-left">✦</div>
+                <div class="plaque-embossed-name">✦ BANGARU ✦</div>
+                <div class="plaque-sparkle-right">✦</div>
+              </div>
+
+              <div class="tier-surface-highlight"></div>
+            </div>
+
+            <!-- Piped Shell Border along bottom of Tier 2 -->
+            <div class="piped-shell-border tier-2-border">
+              <span class="shell-pip"></span><span class="shell-pip"></span><span class="shell-pip"></span>
+              <span class="shell-pip"></span><span class="shell-pip"></span><span class="shell-pip"></span>
+              <span class="shell-pip"></span><span class="shell-pip"></span><span class="shell-pip"></span>
+              <span class="shell-pip"></span><span class="shell-pip"></span><span class="shell-pip"></span>
+            </div>
+          </div>
+
+          <!-- 3D Realistic Tier 3: Deep Velvet Raspberry & Gold Filigree Base -->
+          <div class="real-cake-tier tier-3-base">
+            <!-- 3D Elliptical Top Surface of Tier 3 -->
+            <div class="tier-ellipse-top base-ellipse">
+              <div class="sugar-roses-row">
+                <span class="fondant-rose r1">🌸</span>
+                <span class="fondant-rose r2">🌹</span>
+                <span class="fondant-rose r3">🌸</span>
+              </div>
+            </div>
+
+            <!-- Velvet Cylinder Body with Gold Dripping Lace & Shimmer -->
+            <div class="tier-cylinder-body base-cylinder">
+              <div class="velvet-texture-layer"></div>
+              <div class="luxury-gold-drips base-gold-drips">
+                <span class="gold-drip gd1"></span>
+                <span class="gold-drip gd2"></span>
+                <span class="gold-drip gd3"></span>
+                <span class="gold-drip gd4"></span>
+                <span class="gold-drip gd5"></span>
+                <span class="gold-drip gd6"></span>
+                <span class="gold-drip gd7"></span>
+                <span class="gold-drip gd8"></span>
+              </div>
+              <div class="tier-surface-highlight base-highlight"></div>
+              <div class="filigree-gold-trim"></div>
+            </div>
+
+            <!-- Piped Shell Border along base of Tier 3 -->
+            <div class="piped-shell-border tier-3-border">
+              <span class="shell-pip gold-pip"></span><span class="shell-pip gold-pip"></span><span class="shell-pip gold-pip"></span>
+              <span class="shell-pip gold-pip"></span><span class="shell-pip gold-pip"></span><span class="shell-pip gold-pip"></span>
+              <span class="shell-pip gold-pip"></span><span class="shell-pip gold-pip"></span><span class="shell-pip gold-pip"></span>
+              <span class="shell-pip gold-pip"></span><span class="shell-pip gold-pip"></span><span class="shell-pip gold-pip"></span>
+              <span class="shell-pip gold-pip"></span><span class="shell-pip gold-pip"></span>
+            </div>
+          </div>
+
+          <!-- Luxury Sculpted Marble & Gold Pedestal Stand -->
+          <div class="deluxe-pedestal realistic-pedestal">
+            <div class="stand-platter marble-platter">
+              <div class="platter-gold-rim"></div>
+            </div>
+            <div class="stand-pillar marble-pillar">
+              <div class="pillar-gold-ring top-ring"></div>
+              <div class="pillar-gold-ring bottom-ring"></div>
+            </div>
+            <div class="stand-bottom-plate marble-base">
+              <div class="base-gold-ring"></div>
+            </div>
+            <div class="stand-shadow-table"></div>
+          </div>
+        </div>
+
+        <div class="cake-actions">
+          <button class="primary-btn glow-btn" id="blowCandlesBtn">
+            💨 Make a Wish & Blow Candles!
+          </button>
+          <button class="secondary-btn" id="relightCandlesBtn" style="display: none;">
+            ✨ Relight Candles & Wish Again
+          </button>
+        </div>
+
+        <!-- Pop-Up Surprise Card Unlocked When Blown -->
+        <div class="cake-surprise-card" id="cakeSurpriseCard">
+          <div class="surprise-badge">✨ SPECIAL WISH GRANTED ✨</div>
+          <div class="surprise-heart-anim">🎂 💖 🎁</div>
+          <h3 class="surprise-heading">Happy Birthday, Bangaru! 🎉</h3>
+          <p class="surprise-text">
+            "Your wish has been heard by the universe! May this year bring you the sweetest moments, countless warm hugs, your favorite chocolates, and a million reasons to smile every single day!"
+          </p>
+          <div class="surprise-promise-tag">A Promise Sealed With All My Love ❤️</div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Heartfelt Love Letter Section (Cover on Page, Opens Full Letter in Glass Modal) -->
+    <section class="section-container letter-section">
+      <div class="section-header">
+        <h2 class="section-title">A Letter Just For You 📜</h2>
+      </div>
+
+      <!-- Aesthetic Vintage Love Letter Envelope Cover -->
+      <div class="letter-envelope-cover" id="letterCoverCard" title="Tap to unseal and read letter 💌">
+        <!-- Stamp & Postmark -->
+        <div class="envelope-stamp-wrap">
+          <div class="vintage-stamp">
+            <span class="stamp-heart">💖</span>
+            <span class="stamp-val">NOV 22</span>
+          </div>
+          <div class="postmark-circle">
+            <span>✦ VIZAG ✦</span>
+            <span>22.11.2026</span>
+          </div>
+        </div>
+
+        <!-- Wax Seal Badge with Pulsing Glow -->
+        <div class="wax-seal-badge">
+          <div class="wax-seal-inner">
+            <span class="seal-icon">❤️</span>
+            <span class="seal-caption">SEALED</span>
+          </div>
+          <div class="wax-glow-ring"></div>
+        </div>
+
+        <!-- Envelope Front Details -->
+        <div class="envelope-address-area">
+          <div class="envelope-to-label">To My Dearest,</div>
+          <h3 class="envelope-recipient-name"><span class="recipient-inline">Bangaru</span> <span class="heart-pulse-subtle">❤️</span></h3>
+          <div class="envelope-tagline">"The most precious one in my life &amp; my half"</div>
+          <div class="envelope-sender-tag">From: <span class="sender-handwriting" id="envelopeSenderName">Ne Bujjulu</span> 💌</div>
+        </div>
+
+        <!-- Interactive Tap Prompt -->
+        <div class="envelope-open-prompt">
+          <span class="open-prompt-icon">💌</span>
+          <span class="open-prompt-text">Tap to Unseal &amp; Read Full Letter</span>
+          <span class="open-prompt-arrow">→</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reasons Why I Love You Interactive Deck -->
+    <section class="section-container reasons-section">
+      <div class="section-header">
+        <h2 class="section-title">Reasons I Fall in Love with You Everyday 💌</h2>
+      </div>
+
+      <div class="reason-card-container">
+        <div class="reason-card" id="reasonCard">
+          <div class="card-inner">
+            <div class="card-front">
+              <div class="heart-badge">💖</div>
+              <div class="card-hint">Tap to reveal another reason</div>
+              <p class="reason-text" id="reasonText">
+                "The way your eyes crinkle with genuine joy whenever you laugh at our silly inside jokes."
+              </p>
+              <div class="reason-counter" id="reasonCounter">Card 1 / 10</div>
+            </div>
+          </div>
+        </div>
+        <div class="card-btn-controls">
+          <button class="pill-btn" id="nextReasonBtn">Next Sweet Reason →</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Favorite Memories / Polaroid Wall -->
+    <section class="section-container gallery-section" id="gallerySection">
+      <div class="section-header">
+        <h2 class="section-title">Snapshots of Us 📸</h2>
+      </div>
+
+      <!-- Active Memory Spotlight Banner -->
+      <div class="gallery-status-banner" id="galleryStatusBanner">
+        <span class="memory-count-pill" id="memoryCounterPill">Memory 1 of 5</span>
+        <span class="memory-active-caption" id="memoryActiveCaption">Your innocent smile melts my heart 🌼</span>
+      </div>
+
+      <!-- Carousel Stage with Floating Left & Right Screen Arrows -->
+      <div class="gallery-carousel-stage">
+        <!-- Floating Left Arrow on Left of Screen -->
+        <button type="button" class="screen-gallery-arrow screen-arrow-left" id="galleryPrevBtn" title="Previous memory" aria-label="Previous memory">
+          ‹
+        </button>
+
+        <!-- Cinematic Viewport wrapper -->
+        <div class="gallery-viewport reel-mode" id="galleryViewport">
+          <div class="polaroid-grid" id="polaroidGrid">
+            <!-- Photo 4 (Memory 1 in this gallery) -->
+            <div class="polaroid-card is-active" data-index="0" title="Tap to enlarge photo 💖" onclick="openPhotoLightbox('photo4.jpg', 'Your innocent smile melts my heart 🌼')">
+              <div class="polaroid-tape"></div>
+              <div class="polaroid-img-wrap">
+                <img src="photo4.jpg" alt="Memory 1" loading="lazy" onerror="this.src='photo4.jpg'" />
+              </div>
+              <div class="polaroid-caption">Your innocent smile melts my heart 🌼</div>
+            </div>
+
+            <!-- Photo 5 (Memory 2 in this gallery) -->
+            <div class="polaroid-card" data-index="1" title="Tap to enlarge photo 💖" onclick="openPhotoLightbox('photo5.jpg', 'That cute little shy laugh 🙈✨')">
+              <div class="polaroid-tape"></div>
+              <div class="polaroid-img-wrap">
+                <img src="photo5.jpg" alt="Memory 2" loading="lazy" onerror="this.src='photo5.jpg'" />
+              </div>
+              <div class="polaroid-caption">That cute little shy laugh 🙈✨</div>
+            </div>
+
+            <!-- Photo 6 (Memory 3 in this gallery) -->
+            <div class="polaroid-card" data-index="2" title="Tap to enlarge photo 💖" onclick="openPhotoLightbox('photo6.jpg', 'The most beautiful princess 👑💖')">
+              <div class="polaroid-tape"></div>
+              <div class="polaroid-img-wrap">
+                <img src="photo6.jpg" alt="Memory 3" loading="lazy" onerror="this.src='photo6.jpg'" />
+              </div>
+              <div class="polaroid-caption">The most beautiful princess 👑💖</div>
+            </div>
+
+            <!-- Photo 7 (Memory 4 in this gallery) -->
+            <div class="polaroid-card" data-index="3" title="Tap to enlarge photo 💖" onclick="openPhotoLightbox('photo7.jpg', 'Stunning in every single way ✨')">
+              <div class="polaroid-tape"></div>
+              <div class="polaroid-img-wrap">
+                <img src="photo7.jpg" alt="Memory 4" loading="lazy" onerror="this.src='photo7.jpg'" />
+              </div>
+              <div class="polaroid-caption">Stunning in every single way ✨</div>
+            </div>
+
+            <!-- Photo 8 (Memory 5 in this gallery) -->
+            <div class="polaroid-card" data-index="4" title="Tap to enlarge photo 💖" onclick="openPhotoLightbox('photo8.jpg', 'Lost in your thoughts, forever mine 💫')">
+              <div class="polaroid-tape"></div>
+              <div class="polaroid-img-wrap">
+                <img src="photo8.jpg" alt="Memory 5" loading="lazy" onerror="this.src='photo8.jpg'" />
+              </div>
+              <div class="polaroid-caption">Lost in your thoughts, forever mine 💫</div>
+            </div>
+          </div>
+        </div>
+
+      <!-- Floating Right Arrow on Right of Screen -->
+      <button type="button" class="screen-gallery-arrow screen-arrow-right" id="galleryNextBtn" title="Next memory" aria-label="Next memory">
+        ›
+      </button>
+    </div>
+
+    <!-- Navigation Dots -->
+    <div class="gallery-dots-row" id="galleryDotsRow" aria-label="Memory selection"></div>
+  </section>
+
+    <!-- Virtual Birthday Gift & Surprise Note -->
+    <section class="section-container gifts-section" id="giftsSection">
+      <div class="section-header">
+        <h2 class="section-title">Unbox Your Birthday Gift 🎁</h2>
+      </div>
+
+      <div class="single-gift-wrapper">
+        <!-- Interactive Realistic 3D Luxury Gift Box -->
+        <div class="realistic-gift-box-container" id="giftBoxContainer" role="button" tabindex="0" aria-label="Open your birthday gift">
+          <!-- Ambient Glow & Floating Sparkles -->
+          <div class="gift-ambient-glow"></div>
+          <div class="gift-sparkles-cluster">
+            <span class="sparkle-dot sp1">✨</span>
+            <span class="sparkle-dot sp2">💖</span>
+            <span class="sparkle-dot sp3">✨</span>
+            <span class="sparkle-dot sp4">⭐</span>
+          </div>
+
+          <!-- Realistic Gift Box -->
+          <div class="realistic-gift-box" id="realisticGiftBox">
+            <!-- Box Lid with 3D Satin Ribbon & Luxury Bow -->
+            <div class="box-lid" id="boxLid">
+              <div class="lid-top">
+                <div class="lid-ribbon-h"></div>
+                <div class="lid-ribbon-v"></div>
+                <!-- Luxury 3D Silk Bow -->
+                <div class="silk-bow">
+                  <div class="bow-loop bow-loop-left"></div>
+                  <div class="bow-loop bow-loop-right"></div>
+                  <div class="bow-center-knot"></div>
+                  <div class="bow-tail bow-tail-left"></div>
+                  <div class="bow-tail bow-tail-right"></div>
+                </div>
+              </div>
+              <div class="lid-rim"></div>
+            </div>
+
+            <!-- Box Body with Satin Ribbons & Tag -->
+            <div class="box-body" id="boxBody">
+              <div class="body-ribbon-h"></div>
+              <div class="body-ribbon-v"></div>
+              <div class="box-inner-glow"></div>
+              <!-- Luxury Metallic Gift Tag -->
+              <div class="hanging-tag">
+                <span class="tag-string"></span>
+                <span class="tag-card">To: Bangaru ❤️</span>
+              </div>
+            </div>
+
+            <!-- Realistic Ground Shadow -->
+            <div class="box-ground-shadow"></div>
+          </div>
+
+          <!-- Tap to unbox hint badge -->
+          <div class="gift-tap-hint" id="giftTapHint">
+            <span class="hint-pulse-dot"></span>
+            <span class="hint-text">🎁 Tap the gift box to open ✨</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Reasons Why I Love You Interactive Deck -->
+    <section class="section-container reasons-section">
+      <div class="section-header">
+        <h2 class="section-title">Reasons I Fall in Love with You Everyday 💌</h2>
+      </div>
+
+      <div class="reason-card-container">
+        <div class="reason-card" id="reasonCard">
+          <div class="card-inner">
+            <div class="card-front">
+              <div class="heart-badge">💖</div>
+              <div class="card-hint">Tap to reveal another reason</div>
+              <p class="reason-text" id="reasonText">
+                "The way your eyes crinkle with genuine joy whenever you laugh at our silly inside jokes."
+              </p>
+              <div class="reason-counter" id="reasonCounter">Card 1 / 10</div>
+            </div>
+          </div>
+        </div>
+        <div class="card-btn-controls">
+          <button class="pill-btn" id="nextReasonBtn">Next Sweet Reason →</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Favorite Memories / Polaroid Wall -->
+    <section class="section-container gallery-section" id="gallerySection">
+      <div class="section-header">
+        <h2 class="section-title">Snapshots of Us 📸</h2>
+      </div>
+
+      <!-- Active Memory Spotlight Banner -->
+      <div class="gallery-status-banner" id="galleryStatusBanner">
+        <span class="memory-count-pill" id="memoryCounterPill">Memory 1 of 5</span>
+        <span class="memory-active-caption" id="memoryActiveCaption">Your innocent smile melts my heart 🌼</span>
+      </div>
+
+      <!-- Carousel Stage with Floating Left & Right Screen Arrows -->
+      <div class="gallery-carousel-stage">
+        <!-- Floating Left Arrow on Left of Screen -->
+        <button type="button" class="screen-gallery-arrow screen-arrow-left" id="galleryPrevBtn" title="Previous memory" aria-label="Previous memory">
+          ‹
+        </button>
+
+        <!-- Cinematic Viewport wrapper -->
+        <div class="gallery-viewport reel-mode" id="galleryViewport">
+          <div class="polaroid-grid" id="polaroidGrid">
+            <!-- Photo 4 (Memory 1 in this gallery) -->
+            <div class="polaroid-card is-active" data-index="0" title="Tap to enlarge photo 💖" onclick="openPhotoLightbox('photo4.jpg', 'Your innocent smile melts my heart 🌼')">
+              <div class="polaroid-tape"></div>
+              <div class="polaroid-img-wrap">
+                <img src="photo4.jpg" alt="Memory 1" loading="lazy" onerror="this.src='photo4.jpg'" />
+              </div>
+              <div class="polaroid-caption">Your innocent smile melts my heart 🌼</div>
+            </div>
+
+            <!-- Photo 5 (Memory 2 in this gallery) -->
+            <div class="polaroid-card" data-index="1" title="Tap to enlarge photo 💖" onclick="openPhotoLightbox('photo5.jpg', 'That cute little shy laugh 🙈✨')">
+              <div class="polaroid-tape"></div>
+              <div class="polaroid-img-wrap">
+                <img src="photo5.jpg" alt="Memory 2" loading="lazy" onerror="this.src='photo5.jpg'" />
+              </div>
+              <div class="polaroid-caption">That cute little shy laugh 🙈✨</div>
+            </div>
+
+            <!-- Photo 6 (Memory 3 in this gallery) -->
+            <div class="polaroid-card" data-index="2" title="Tap to enlarge photo 💖" onclick="openPhotoLightbox('photo6.jpg', 'The most beautiful princess 👑💖')">
+              <div class="polaroid-tape"></div>
+              <div class="polaroid-img-wrap">
+                <img src="photo6.jpg" alt="Memory 3" loading="lazy" onerror="this.src='photo6.jpg'" />
+              </div>
+              <div class="polaroid-caption">The most beautiful princess 👑💖</div>
+            </div>
+
+            <!-- Photo 7 (Memory 4 in this gallery) -->
+            <div class="polaroid-card" data-index="3" title="Tap to enlarge photo 💖" onclick="openPhotoLightbox('photo7.jpg', 'Stunning in every single way ✨')">
+              <div class="polaroid-tape"></div>
+              <div class="polaroid-img-wrap">
+                <img src="photo7.jpg" alt="Memory 4" loading="lazy" onerror="this.src='photo7.jpg'" />
+              </div>
+              <div class="polaroid-caption">Stunning in every single way ✨</div>
+            </div>
+
+            <!-- Photo 8 (Memory 5 in this gallery) -->
+            <div class="polaroid-card" data-index="4" title="Tap to enlarge photo 💖" onclick="openPhotoLightbox('photo8.jpg', 'Lost in your thoughts, forever mine 💫')">
+              <div class="polaroid-tape"></div>
+              <div class="polaroid-img-wrap">
+                <img src="photo8.jpg" alt="Memory 5" loading="lazy" onerror="this.src='photo8.jpg'" />
+              </div>
+              <div class="polaroid-caption">Lost in your thoughts, forever mine 💫</div>
+            </div>
+          </div>
+        </div>
+
+      <!-- Floating Right Arrow on Right of Screen -->
+      <button type="button" class="screen-gallery-arrow screen-arrow-right" id="galleryNextBtn" title="Next memory" aria-label="Next memory">
+        ›
+      </button>
+    </div>
+
+    <!-- Navigation Dots -->
+    <div class="gallery-dots-row" id="galleryDotsRow" aria-label="Memory selection"></div>
+  </section>
+
+    <!-- Virtual Birthday Gift & Surprise Note -->
+    <section class="section-container gifts-section" id="giftsSection">
+      <div class="section-header">
+        <h2 class="section-title">Unbox Your Birthday Gift 🎁</h2>
+      </div>
+
+      <div class="single-gift-wrapper">
+        <!-- Interactive Realistic 3D Luxury Gift Box -->
+        <div class="realistic-gift-box-container" id="giftBoxContainer" role="button" tabindex="0" aria-label="Open your birthday gift">
+          <!-- Ambient Glow & Floating Sparkles -->
+          <div class="gift-ambient-glow"></div>
+          <div class="gift-sparkles-cluster">
+            <span class="sparkle-dot sp1">✨</span>
+            <span class="sparkle-dot sp2">💖</span>
+            <span class="sparkle-dot sp3">✨</span>
+            <span class="sparkle-dot sp4">⭐</span>
+          </div>
+
+          <!-- Realistic Gift Box -->
+          <div class="realistic-gift-box" id="realisticGiftBox">
+            <!-- Box Lid with 3D Satin Ribbon & Luxury Bow -->
+            <div class="box-lid" id="boxLid">
+              <div class="lid-top">
+                <div class="lid-ribbon-h"></div>
+                <div class="lid-ribbon-v"></div>
+                <!-- Luxury 3D Silk Bow -->
+                <div class="silk-bow">
+                  <div class="bow-loop bow-loop-left"></div>
+                  <div class="bow-loop bow-loop-right"></div>
+                  <div class="bow-center-knot"></div>
+                  <div class="bow-tail bow-tail-left"></div>
+                  <div class="bow-tail bow-tail-right"></div>
+                </div>
+              </div>
+              <div class="lid-rim"></div>
+            </div>
+
+            <!-- Box Body with Satin Ribbons & Tag -->
+            <div class="box-body" id="boxBody">
+              <div class="body-ribbon-h"></div>
+              <div class="body-ribbon-v"></div>
+              <div class="box-inner-glow"></div>
+              <!-- Luxury Metallic Gift Tag -->
+              <div class="hanging-tag">
+                <span class="tag-string"></span>
+                <span class="tag-card">To: Bangaru ❤️</span>
+              </div>
+            </div>
+
+            <!-- Realistic Ground Shadow -->
+            <div class="box-ground-shadow"></div>
+          </div>
+
+          <!-- Tap to unbox hint badge -->
+          <div class="gift-tap-hint" id="giftTapHint">
+            <span class="hint-pulse-dot"></span>
+            <span class="hint-text">🎁 Tap the gift box to open ✨</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sweet Interactive Wish Wall -->
+    <section class="section-container message-board-section">
+      <div class="section-header">
+        <h2 class="section-title">Our Sweet Wish Wall 💌</h2>
+      </div>
+
+      <div class="wish-board-input-wrap">
+        <input type="text" id="stickyNoteInput" placeholder="Write a cute thought, promise or wish..." maxlength="120" />
+        <button class="primary-btn" id="addNoteBtn">Pin Note 📌</button>
+      </div>
+
+      <div class="sticky-notes-board" id="stickyNotesBoard">
+        <!-- Rendered notes -->
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="romantic-footer">
+      <div class="footer-heart">💖</div>
+      <p class="footer-main">Created with endless love for the most incredible girl in the world.</p>
+      <p class="footer-sub">Happy Birthday, My Everything • November 22</p>
+    </footer>
+
+  </div>
+
+  <!-- Settings & Customization Modal -->
+  <div class="modal-backdrop" id="settingsModal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>✨ Customize Her Surprise Website</h3>
+        <button class="close-modal-btn" id="closeSettingsBtn">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p class="modal-info-text">
+          Easily personalize this website with her real name, your names, custom love letter, and photo memories! All changes save automatically on this device.
+        </p>
+
+        <div class="form-group">
+          <label>Her Name / Nickname:</label>
+          <input type="text" id="cfgGirlName" placeholder="e.g. My Princess / Ananya / Sophia" />
+        </div>
+
+        <div class="form-group">
+          <label>Your Name / Signature:</label>
+          <input type="text" id="cfgYourName" placeholder="e.g. Your Chaitanya / Forever Yours" />
+        </div>
+
+        <div class="form-group">
+          <label>Hero Tagline:</label>
+          <textarea id="cfgHeroTagline" rows="2" placeholder="A sweet line to greet her under the main title"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label>Her Love Letter Message:</label>
+          <textarea id="cfgLetterText" rows="5" placeholder="Write whatever is in your heart for her..."></textarea>
+        </div>
+
+        <div class="form-group">
+          <label>Photos for Polaroid Wall (Image URLs or local paths):</label>
+          <div class="polaroid-inputs">
+            <input type="text" id="cfgPhoto1" placeholder="Photo 1 URL (e.g. https://... or images/photo1.jpg)" />
+            <input type="text" id="cfgCaption1" placeholder="Photo 1 Caption (e.g. Our first date)" />
+            <hr class="form-divider" />
+            <input type="text" id="cfgPhoto2" placeholder="Photo 2 URL" />
+            <input type="text" id="cfgCaption2" placeholder="Photo 2 Caption" />
+            <hr class="form-divider" />
+            <input type="text" id="cfgPhoto3" placeholder="Photo 3 URL" />
+            <input type="text" id="cfgCaption3" placeholder="Photo 3 Caption" />
+            <hr class="form-divider" />
+            <input type="text" id="cfgPhoto4" placeholder="Photo 4 URL" />
+            <input type="text" id="cfgCaption4" placeholder="Photo 4 Caption" />
+            <hr class="form-divider" />
+            <input type="text" id="cfgPhoto5" placeholder="Photo 5 URL" />
+            <input type="text" id="cfgCaption5" placeholder="Photo 5 Caption" />
+            <hr class="form-divider" />
+            <input type="text" id="cfgPhoto6" placeholder="Photo 6 URL" />
+            <input type="text" id="cfgCaption6" placeholder="Photo 6 Caption" />
+            <hr class="form-divider" />
+            <input type="text" id="cfgPhoto7" placeholder="Photo 7 URL" />
+            <input type="text" id="cfgCaption7" placeholder="Photo 7 Caption" />
+            <hr class="form-divider" />
+            <input type="text" id="cfgPhoto8" placeholder="Photo 8 URL" />
+            <input type="text" id="cfgCaption8" placeholder="Photo 8 Caption" />
+          </div>
+        </div>
+
+        <div class="modal-actions">
+          <button class="primary-btn glow-btn" id="saveSettingsBtn">Save & Apply Changes 💖</button>
+          <button class="secondary-btn" id="resetDefaultsBtn">Reset to Defaults</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- THE REVEALED ROMANTIC NOTE MODAL (FULL VIEWPORT GLASS BLUR) -->
+  <div class="revealed-note-modal" id="revealedNoteModal" aria-hidden="true">
+    <div class="revealed-note-backdrop" id="noteBackdrop"></div>
+    <div class="revealed-note-card" id="revealedNoteCard">
+      <button type="button" class="close-note-btn" id="closeNoteBtn" aria-label="Close note">✕</button>
+      <div class="note-parchment-texture"></div>
+      <div class="note-border-ornament">
+        <div class="note-corner corner-tl">❧</div>
+        <div class="note-corner corner-tr">❧</div>
+        <div class="note-corner corner-bl">❧</div>
+        <div class="note-corner corner-br">❧</div>
+      </div>
+
+      <div class="note-header-badge">
+        <span class="badge-sparkle">✦</span>
+        <span class="badge-label">A Secret Note For You</span>
+        <span class="badge-sparkle">✦</span>
+      </div>
+
+      <div class="note-content-body">
+        <div class="note-quote-mark">“</div>
+        <p class="note-main-message" id="noteMainMessage">
+          as soon as u see me come and give me a tight hug
+        </p>
+        <div class="note-quote-mark quote-end">”</div>
+      </div>
+
+      <div class="note-signoff">
+        <div class="note-wax-seal">
+          <span class="seal-icon">❤️</span>
+        </div>
+        <div class="note-signature-text">
+          <span class="sig-prompt">With all my love & longing,</span>
+          <span class="sig-name">Ne Bujjulu ❤️</span>
+        </div>
+      </div>
+
+      <div class="note-action-row">
+        <button type="button" class="tight-hug-action-btn" id="tightHugBtn">
+          🤗 I Promise A Tight Hug! ❤️
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- SEPARATE FULL-PAGE LOVE LETTER MODAL WITH BACKGROUND BLUR GLASS EFFECT -->
+  <div class="letter-modal-overlay" id="letterOverlayModal" aria-hidden="true">
+    <div class="letter-modal-dialog">
+      <!-- Floating Top Close Button -->
+      <button class="letter-modal-close-btn" id="closeLetterModalTopBtn" title="Close Letter">&times;</button>
+
+      <!-- The Complete Original Parchment Letter -->
+      <div class="letter-card parchment letter-modal-parchment">
+        <div class="letter-header">
+          <span class="letter-stamp">Dearest <span class="recipient-inline">Bangaru</span> ❤️</span>
+          <span class="letter-date">November 22, 2026 ✨</span>
+        </div>
+        <div class="letter-body" id="letterContent">
+          <!-- Populated dynamically by script.js with the complete heartfelt letter -->
+        </div>
+        <div class="letter-modal-footer">
+          <button class="fold-letter-btn" id="foldLetterBottomBtn">
+            📜 Fold Letter &amp; Return To Website ✨
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Romantic Photo Lightbox Modal -->
+  <div class="photo-lightbox-backdrop" id="photoLightboxModal">
+    <div class="photo-lightbox-content">
+      <button class="lightbox-close-btn" id="closeLightboxBtn" title="Close">&times;</button>
+      <img src="photo1.jpg" alt="Enlarged Memory" id="lightboxImg" class="lightbox-img" />
+      <div class="lightbox-caption" id="lightboxCap"></div>
+    </div>
+  </div>
+
+  <script src="script.js?v=32"></script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+# Operating System files
+.DS_Store
+Thumbs.db
+desktop.ini
+*.tmp
+
+# Editor & IDE directories
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Node / Python temporary caches
+node_modules/
+__pycache__/
+*.pyc
+
+# Antigravity agent temp files
+.gemini/
+scratch/
+update_*.py
+fix_*.py
+apply_*.py

@@ -57,7 +57,7 @@ akali vestey tinipinchadaniki amma ni avuthaa
 kastam ostey addukune nanna ni avuthaa
 godava ostey kottukodaniki villan ni avuthaa
 ee heroine kosam hero avutha
-ne princess world lochey ochey ne prince ni avutha
+ne princess world loki ochey ne prince ni avutha
 mothaniki ne life partner ga avuthaa
 
 ey kastam ina chusukodaniki nen unna
@@ -125,7 +125,7 @@ function loadConfig() {
       }
       userConfig.girlName = "My Bangaru";
       // Ensure the Telugu letter is used if old template was stored
-      if (!userConfig.letter || userConfig.letter.includes("When I look back at all my favorite moments") || !userConfig.letter.includes("CRISPY")) {
+      if (!userConfig.letter || userConfig.letter.includes("When I look back at all my favorite moments") || !userConfig.letter.includes("CRISPY") || userConfig.letter.includes("lochey")) {
         userConfig.letter = DEFAULT_CONFIG.letter;
         userConfig.senderName = DEFAULT_CONFIG.senderName;
       }
@@ -232,7 +232,7 @@ function renderStructuredLetter(text, senderName) {
             <li class="promise-item"><span class="promise-emoji">🛡️</span> <span class="promise-msg">kastam ostey addukune nanna ni avuthaa</span></li>
             <li class="promise-item"><span class="promise-emoji">🥊</span> <span class="promise-msg">godava ostey kottukodaniki villan ni avuthaa</span></li>
             <li class="promise-item"><span class="promise-emoji">🎬</span> <span class="promise-msg">ee heroine kosam hero avutha</span></li>
-            <li class="promise-item"><span class="promise-emoji">👑</span> <span class="promise-msg">ne princess world lochey ochey ne prince ni avutha</span></li>
+            <li class="promise-item"><span class="promise-emoji">👑</span> <span class="promise-msg">ne princess world loki ochey ne prince ni avutha</span></li>
             <li class="promise-item promise-item-final"><span class="promise-emoji">💍</span> <span class="promise-msg">mothaniki ne life partner ga avuthaa</span></li>
           </ul>
         </div>

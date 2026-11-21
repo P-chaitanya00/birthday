@@ -3163,6 +3163,7 @@ body.letter-modal-open {
   box-shadow: 0 8px 24px rgba(112, 17, 40, 0.12), 0 0 16px rgba(255, 215, 0, 0.25);
   transition: all 0.3s ease;
   z-index: 5;
+  cursor: pointer;
 }
 
 .realistic-gift-box-container:hover .gift-tap-hint {

@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Dancing+Script:wght@600;700&family=Great+Vibes&family=Playfair+Display:ital,wght@0,600;0,700;0,800;0,900;1,600;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Prata&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=32" />
+  <link rel="stylesheet" href="style.css?v=34" />
   <!-- Canvas Confetti CDN -->
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
 </head>
@@ -585,173 +585,6 @@
             <span class="hint-text">🎁 Tap the gift box to open ✨</span>
           </div>
         </div>
-
-      </div>
-    </section>
-
-    <!-- Reasons Why I Love You Interactive Deck -->
-    <section class="section-container reasons-section">
-      <div class="section-header">
-        <h2 class="section-title">Reasons I Fall in Love with You Everyday 💌</h2>
-      </div>
-
-      <div class="reason-card-container">
-        <div class="reason-card" id="reasonCard">
-          <div class="card-inner">
-            <div class="card-front">
-              <div class="heart-badge">💖</div>
-              <div class="card-hint">Tap to reveal another reason</div>
-              <p class="reason-text" id="reasonText">
-                "The way your eyes crinkle with genuine joy whenever you laugh at our silly inside jokes."
-              </p>
-              <div class="reason-counter" id="reasonCounter">Card 1 / 10</div>
-            </div>
-          </div>
-        </div>
-        <div class="card-btn-controls">
-          <button class="pill-btn" id="nextReasonBtn">Next Sweet Reason →</button>
-        </div>
-      </div>
-    </section>
-
-    <!-- Our Favorite Memories / Polaroid Wall -->
-    <section class="section-container gallery-section" id="gallerySection">
-      <div class="section-header">
-        <h2 class="section-title">Snapshots of Us 📸</h2>
-      </div>
-
-      <!-- Active Memory Spotlight Banner -->
-      <div class="gallery-status-banner" id="galleryStatusBanner">
-        <span class="memory-count-pill" id="memoryCounterPill">Memory 1 of 5</span>
-        <span class="memory-active-caption" id="memoryActiveCaption">Your innocent smile melts my heart 🌼</span>
-      </div>
-
-      <!-- Carousel Stage with Floating Left & Right Screen Arrows -->
-      <div class="gallery-carousel-stage">
-        <!-- Floating Left Arrow on Left of Screen -->
-        <button type="button" class="screen-gallery-arrow screen-arrow-left" id="galleryPrevBtn" title="Previous memory" aria-label="Previous memory">
-          ‹
-        </button>
-
-        <!-- Cinematic Viewport wrapper -->
-        <div class="gallery-viewport reel-mode" id="galleryViewport">
-          <div class="polaroid-grid" id="polaroidGrid">
-            <!-- Photo 4 (Memory 1 in this gallery) -->
-            <div class="polaroid-card is-active" data-index="0" title="Tap to enlarge photo 💖" onclick="openPhotoLightbox('photo4.jpg', 'Your innocent smile melts my heart 🌼')">
-              <div class="polaroid-tape"></div>
-              <div class="polaroid-img-wrap">
-                <img src="photo4.jpg" alt="Memory 1" loading="lazy" onerror="this.src='photo4.jpg'" />
-              </div>
-              <div class="polaroid-caption">Your innocent smile melts my heart 🌼</div>
-            </div>
-
-            <!-- Photo 5 (Memory 2 in this gallery) -->
-            <div class="polaroid-card" data-index="1" title="Tap to enlarge photo 💖" onclick="openPhotoLightbox('photo5.jpg', 'That cute little shy laugh 🙈✨')">
-              <div class="polaroid-tape"></div>
-              <div class="polaroid-img-wrap">
-                <img src="photo5.jpg" alt="Memory 2" loading="lazy" onerror="this.src='photo5.jpg'" />
-              </div>
-              <div class="polaroid-caption">That cute little shy laugh 🙈✨</div>
-            </div>
-
-            <!-- Photo 6 (Memory 3 in this gallery) -->
-            <div class="polaroid-card" data-index="2" title="Tap to enlarge photo 💖" onclick="openPhotoLightbox('photo6.jpg', 'The most beautiful princess 👑💖')">
-              <div class="polaroid-tape"></div>
-              <div class="polaroid-img-wrap">
-                <img src="photo6.jpg" alt="Memory 3" loading="lazy" onerror="this.src='photo6.jpg'" />
-              </div>
-              <div class="polaroid-caption">The most beautiful princess 👑💖</div>
-            </div>
-
-            <!-- Photo 7 (Memory 4 in this gallery) -->
-            <div class="polaroid-card" data-index="3" title="Tap to enlarge photo 💖" onclick="openPhotoLightbox('photo7.jpg', 'Stunning in every single way ✨')">
-              <div class="polaroid-tape"></div>
-              <div class="polaroid-img-wrap">
-                <img src="photo7.jpg" alt="Memory 4" loading="lazy" onerror="this.src='photo7.jpg'" />
-              </div>
-              <div class="polaroid-caption">Stunning in every single way ✨</div>
-            </div>
-
-            <!-- Photo 8 (Memory 5 in this gallery) -->
-            <div class="polaroid-card" data-index="4" title="Tap to enlarge photo 💖" onclick="openPhotoLightbox('photo8.jpg', 'Lost in your thoughts, forever mine 💫')">
-              <div class="polaroid-tape"></div>
-              <div class="polaroid-img-wrap">
-                <img src="photo8.jpg" alt="Memory 5" loading="lazy" onerror="this.src='photo8.jpg'" />
-              </div>
-              <div class="polaroid-caption">Lost in your thoughts, forever mine 💫</div>
-            </div>
-          </div>
-        </div>
-
-      <!-- Floating Right Arrow on Right of Screen -->
-      <button type="button" class="screen-gallery-arrow screen-arrow-right" id="galleryNextBtn" title="Next memory" aria-label="Next memory">
-        ›
-      </button>
-    </div>
-
-    <!-- Navigation Dots -->
-    <div class="gallery-dots-row" id="galleryDotsRow" aria-label="Memory selection"></div>
-  </section>
-
-    <!-- Virtual Birthday Gift & Surprise Note -->
-    <section class="section-container gifts-section" id="giftsSection">
-      <div class="section-header">
-        <h2 class="section-title">Unbox Your Birthday Gift 🎁</h2>
-      </div>
-
-      <div class="single-gift-wrapper">
-        <!-- Interactive Realistic 3D Luxury Gift Box -->
-        <div class="realistic-gift-box-container" id="giftBoxContainer" role="button" tabindex="0" aria-label="Open your birthday gift">
-          <!-- Ambient Glow & Floating Sparkles -->
-          <div class="gift-ambient-glow"></div>
-          <div class="gift-sparkles-cluster">
-            <span class="sparkle-dot sp1">✨</span>
-            <span class="sparkle-dot sp2">💖</span>
-            <span class="sparkle-dot sp3">✨</span>
-            <span class="sparkle-dot sp4">⭐</span>
-          </div>
-
-          <!-- Realistic Gift Box -->
-          <div class="realistic-gift-box" id="realisticGiftBox">
-            <!-- Box Lid with 3D Satin Ribbon & Luxury Bow -->
-            <div class="box-lid" id="boxLid">
-              <div class="lid-top">
-                <div class="lid-ribbon-h"></div>
-                <div class="lid-ribbon-v"></div>
-                <!-- Luxury 3D Silk Bow -->
-                <div class="silk-bow">
-                  <div class="bow-loop bow-loop-left"></div>
-                  <div class="bow-loop bow-loop-right"></div>
-                  <div class="bow-center-knot"></div>
-                  <div class="bow-tail bow-tail-left"></div>
-                  <div class="bow-tail bow-tail-right"></div>
-                </div>
-              </div>
-              <div class="lid-rim"></div>
-            </div>
-
-            <!-- Box Body with Satin Ribbons & Tag -->
-            <div class="box-body" id="boxBody">
-              <div class="body-ribbon-h"></div>
-              <div class="body-ribbon-v"></div>
-              <div class="box-inner-glow"></div>
-              <!-- Luxury Metallic Gift Tag -->
-              <div class="hanging-tag">
-                <span class="tag-string"></span>
-                <span class="tag-card">To: Bangaru ❤️</span>
-              </div>
-            </div>
-
-            <!-- Realistic Ground Shadow -->
-            <div class="box-ground-shadow"></div>
-          </div>
-
-          <!-- Tap to unbox hint badge -->
-          <div class="gift-tap-hint" id="giftTapHint">
-            <span class="hint-pulse-dot"></span>
-            <span class="hint-text">🎁 Tap the gift box to open ✨</span>
-          </div>
-        </div>
       </div>
     </section>
 
@@ -927,6 +760,6 @@
     </div>
   </div>
 
-  <script src="script.js?v=32"></script>
+  <script src="script.js?v=34"></script>
 </body>
 </html>

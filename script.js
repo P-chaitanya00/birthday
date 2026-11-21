@@ -606,43 +606,50 @@ function initReasonsDeck() {
 function initGifts() {
   const giftBoxContainer = document.getElementById("giftBoxContainer");
   const giftBox = document.getElementById("realisticGiftBox");
+  const giftTapHint = document.getElementById("giftTapHint");
   const noteModal = document.getElementById("revealedNoteModal");
   const closeNoteBtn = document.getElementById("closeNoteBtn");
   const noteBackdrop = document.getElementById("noteBackdrop");
   const tightHugBtn = document.getElementById("tightHugBtn");
 
-  if (!giftBoxContainer || !giftBox || !noteModal) return;
+  if (!giftBoxContainer || !noteModal) return;
 
-  function openGiftBox() {
-    giftBox.classList.add("opened");
+  function openGiftBox(e) {
+    if (e && e.stopPropagation) e.stopPropagation();
+    if (giftBox) giftBox.classList.add("opened");
 
     // Confetti celebration
     if (window.confetti) {
       window.confetti({
-        particleCount: 75,
-        spread: 70,
+        particleCount: 80,
+        spread: 75,
         origin: { y: 0.6 },
         colors: ["#ff4d6d", "#ffd166", "#e63946", "#ff758f", "#ffffff"]
       });
     }
 
-    // Immediately show the note over the blurred background - zero lag
+    // Immediately show the note over the blurred background
     setTimeout(() => {
       noteModal.classList.add("active");
       noteModal.setAttribute("aria-hidden", "false");
     }, 120);
   }
 
-  function closeNote() {
+  function closeNote(e) {
+    if (e && e.stopPropagation) e.stopPropagation();
     noteModal.classList.remove("active");
     noteModal.setAttribute("aria-hidden", "true");
+    if (giftBox) giftBox.classList.remove("opened");
   }
 
   giftBoxContainer.addEventListener("click", openGiftBox);
+  if (giftBox) giftBox.addEventListener("click", openGiftBox);
+  if (giftTapHint) giftTapHint.addEventListener("click", openGiftBox);
+
   giftBoxContainer.addEventListener("keydown", (e) => {
     if (e.key === "Enter" || e.key === " ") {
       e.preventDefault();
-      openGiftBox();
+      openGiftBox(e);
     }
   });
 
@@ -650,7 +657,8 @@ function initGifts() {
   if (noteBackdrop) noteBackdrop.addEventListener("click", closeNote);
 
   if (tightHugBtn) {
-    tightHugBtn.addEventListener("click", () => {
+    tightHugBtn.addEventListener("click", (e) => {
+      if (e && e.stopPropagation) e.stopPropagation();
       if (window.confetti) {
         window.confetti({
           particleCount: 90,
